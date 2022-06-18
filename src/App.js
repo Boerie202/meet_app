@@ -5,12 +5,13 @@ import EventList from './EventList';
 import { getEvents, extractLocations } from './api';
 import './nprogress.css';
 
-class App extends Component() {
-
+class App extends Component {
   state = {
     events: [],
-    locations: []
+    locations: [],
   }
+
+
 
   updateEvents = (location) => {
     getEvents().then((events) => {
