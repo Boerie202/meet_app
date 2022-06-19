@@ -5,38 +5,40 @@ class NumberOfEvents extends Component {
 
 
     state = {
-        numberOfEvents: 1
+        numberOfEvents: 32,
+        errorText: ''
     }
 
-    changeNumOfEvents = (e) => {
-        let newValue = parseInt(e.target.value);
-        if ((newValue > 33) || (newValue < 1)) {
+    handleInputChanged = (event) => {
+        const value = event.target.value;
+        if (value < 1 || value > 32) {
             this.setState({
-                numberOfEvents: newValue,
-                infoText: 'Please choose a number between 1 and 32',
+                numberOfEvents: '',
+                errorText: 'Please enter a number between 1 and 32',
             })
         } else {
             this.setState({
-                numberOfEvents: newValue,
-                infoText: ' ',
-            })
+                numberOfEvents: value
+            });
         }
-        this.props.updateEvents(undefined, newValue);
-    }
+        this.props.updateNumberOfEvents(event.target.value);
+    };
 
     render() {
+
         return (
-            <>
-                <div className="numberOfEvents text-muted">How many events would you like to see?</div>
+            <div className='numberOfEvents'>
+                <div className='numberOfEventsAlert'>
+                    <ErrorAlert text={this.state.errorText} />
+                </div>
                 <input
-                    className="events_number__input my-3"
-                    type="number"
-                    onChange={this.changeNumOfEvents}
-                    value={this.state.numberOfEvents}>
-                </input>
-                <ErrorAlert text={this.state.infoText} />
-            </>
-        );
+                    type='number'
+                    className='inputNumberOfEvents'
+                    onChange={this.handleInputChanged}
+                    value={this.state.numberOfEvents}
+                />
+            </div>
+        )
     }
 }
 
