@@ -5,7 +5,7 @@ import EventList from './EventList';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import './nprogress.css';
-import WelcomeScreen from '.WelcomeScreen';
+import WelcomeScreen from './WelcomeScreen';
 
 
 class App extends Component {
@@ -71,19 +71,20 @@ class App extends Component {
 
   render() {
 
-    if (this.state.showWelcomeScreen === undefined)
+    // if (this.state.showWelcomeScreen === undefined)
 
-      return (
-        <div className="App" >
+    return (
+      <div className="App" >
 
-          <NumberOfEvents numberOfEvents={NumberOfEvents}
-            updateNumberOfEvents={this.updateNumberOfEvents} />
-          <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-          <EventList events={this.state.events} />
-          < WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
+        <NumberOfEvents numberOfEvents={NumberOfEvents}
+          updateNumberOfEvents={this.updateNumberOfEvents} />
+        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+        <EventList events={this.state.events} />
+        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
+          getAccessToken={() => { getAccessToken() }} />
 
-        </div>
-      );
+      </div>
+    );
   }
 }
 export default App;
