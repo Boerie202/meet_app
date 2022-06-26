@@ -82,7 +82,8 @@ class App extends Component {
       numberOfEvents: number,
 
     })
-    this.updateEvents(location, number)
+
+    this.updateEvents(this.state.locationSelected, number)
   }
 
   render() {
