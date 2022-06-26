@@ -79,8 +79,10 @@ class App extends Component {
 
   updateNumberofEvents(number) {
     this.setState({
-      numberOfEvents: number
+      numberOfEvents: number,
+      events: locationEvents.slice(0, eventCount),
     })
+
   }
 
   render() {
