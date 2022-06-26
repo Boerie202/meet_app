@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+ul {
+  padding: 0;
+  list-style: none;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -28,10 +33,23 @@
   color: #61dafb;
 }
 
+.data-vis-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.data-vis-wrapper .recharts-responsive-container {
+  min-width: 100%;
+  display: flex;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
