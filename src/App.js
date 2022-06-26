@@ -94,7 +94,7 @@ class App extends Component {
         <h4>Choose your nearest city</h4>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
 
-        <NumberOfEvents updateEvents={(value) => this.updateNumberofEvents(value)} numberOfEvents={this.state.numberOfEvents} />
+        <NumberOfEvents updateNumberofEvents={(value) => this.updateNumberofEvents(value)} numberOfEvents={this.state.numberOfEvents} />
 
         <h4>Events in each city</h4>
 
