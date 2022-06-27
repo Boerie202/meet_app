@@ -78,12 +78,14 @@ class App extends Component {
   };
 
   updateNumberofEvents(number) {
+
+    console.log('app', number)
     this.setState({
       numberOfEvents: number,
 
     })
 
-    this.updateEvents(this.state.locationSelected, number)
+    this.updateEvents(undefined, number)
   }
 
   render() {

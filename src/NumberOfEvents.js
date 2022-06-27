@@ -10,7 +10,7 @@ class NumberOfEvents extends Component {
     }
 
     handleInputChanged = (event) => {
-        const value = event.target.value;
+        const value = parseInt(event.target.value);
         // debugger
         if (value < 1 || value > 32) {
             this.setState({
